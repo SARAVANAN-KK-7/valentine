@@ -1,0 +1,112 @@
+/* Typing */
+function typeText(text,callback){
+  sequence.innerHTML="";
+  let i=0;
+  let interval=setInterval(()=>{
+    sequence.innerHTML+=text.charAt(i);
+    i++;
+    if(i>=text.length){
+      clearInterval(interval);
+      if(callback) callback();
+    }
+  },40);
+}
+
+yesBtn.addEventListener("click",()=>{
+
+  yesBtn.style.display="none";
+  noBtn.style.display="none";
+  finalMsg.style.display="block";
+
+  typeText("Don't Worry Meenakshi😅, I won't take this as your DECISION😜",()=>{
+
+    mainTitle.classList.add("fade-out");
+
+    setTimeout(()=>{
+      typeText("I want to say something...",()=>{
+
+        setTimeout(()=>{
+          typeText("Na Itha soLliYe aaganum....",()=>{
+
+            let btn=document.createElement("button");
+            btn.innerText="Enna??";
+            btn.className="extra-btn";
+            extra.appendChild(btn);
+
+            btn.onclick=()=>{
+              extra.innerHTML="";
+
+              typeText("Sometimes my HEART FEELS SPECIAL✨ when my BRAIN THINKS about U.....",()=>{
+
+                setTimeout(()=>{
+                  typeText("Appo Enakkulla Oru MUSIC kekkum… It's an Rahman's BeautIfuL MUSIC🎶.",()=>{
+
+                    let musicBtn=document.createElement("button");
+                    musicBtn.innerText="MUSIC??";
+                    musicBtn.className="extra-btn";
+                    extra.appendChild(musicBtn);
+
+                    musicBtn.onclick=()=>{
+
+                      bgm.play();
+
+                      let fade=setInterval(()=>{
+                        if(bgm.volume<0.6){
+                          bgm.volume+=0.02;
+                        }else clearInterval(fade);
+                      },200);
+
+                      bgm.onended=function(){
+
+                        musicBtn.remove();  /* 🔥 remove music button */
+
+                        typeText("It's a second most beautiful thing after U.....",()=>{
+
+                          setTimeout(()=>{
+                            sequence.innerHTML=
+                            "Silence doesn’t mean the feeling faded…<br>sometimes it’s growing quietly.";
+
+                            setTimeout(()=>{
+                              typeText("If someday it feels right… we won’t need explanations🌙",()=>{
+
+                                setTimeout(()=>{
+                                  typeText("Even if life gets busy… my place for you won’t change. 💞",()=>{
+
+                                    setTimeout(()=>{
+                                      typeText("Some stories don’t need labels… they just need two hearts that understand. 🌙✨");
+                                    },5000);
+
+                                  });
+                                },5000);
+
+                              });
+                            },5000);
+
+                          },5000);
+
+                        });
+
+                      };
+
+                    };
+
+                  });
+
+                },5000);
+
+              });
+
+            };
+
+          });
+        },5000);
+      });
+    },5000);
+
+  });
+
+});
+</script>
+
+</body>
+</html>
